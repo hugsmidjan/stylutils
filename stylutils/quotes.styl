@@ -1,0 +1,39 @@
+use('helpers.js')
+
+// quote marks for use with blockquote
+$quotes = {
+    upper6: '\2018',
+    upper9: '\2019',
+    lower9: '\201a',
+    upper66: '\201c',
+    upper99: '\201d',
+    lower99: '\201e',
+}
+$quotes.IS = {
+    open: $quotes.lower99,
+    close: $quotes.upper66,
+    openSingle: $quotes.lower9,
+    closeSingle: $quotes.upper6,
+}
+$quotes.EN = {
+    open: $quotes.upper66,
+    close: $quotes.upper99,
+    openSingle: $quotes.upper6,
+    closeSingle: $quotes.upper9,
+}
+
+// Usage:
+//   _addQuotationMarks( en, 'is' ) // adds quotation marks for 'en' and 'is'
+_addQuotationMarks(langs...) {
+    for $lang in langs {
+        $lang = _lowerCase($lang)
+        $LANG = _upperCase($lang)
+        &:lang({$lang})::before {
+            content: $quotes[$LANG].open
+        }
+        &:lang({$lang})::after {
+            content: $quotes[$LANG].close
+        }
+    }
+    // Add more languages...
+}

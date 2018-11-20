@@ -1,0 +1,55 @@
+_parseMediaQueries(mediaFormats) {
+    $mq = {}
+    $mq.base = 'screen'
+    for $name, $itm in mediaFormats {
+        // Build $mq.{$name} object of media-query strings
+        $mqString = $mq.base
+        $mqString += ' and (min-width:'+($itm.minWidth)px+')' if $itm.minWidth
+        $mqString += ' and (max-width:'+($itm.maxWidth - 1)px+')' if $itm.maxWidth
+        $mqString += ' and (min-height:'+($itm.minHeight - 1)px+')' if $itm.minHeight
+        $mq[$name] = $mqString
+    }
+    return $mq
+}
+_parseBreakPoints(mediaFormats) {
+    $bp = {}
+    for $name, $itm in mediaFormats {
+        // The "main"/top-level formats have a group
+        // Build $bp.{$name}-(min|max) variables based on them.
+        if ($itm.group) {
+            $bp[$name+'-min'] = ($itm.minWidth)px if $itm.minWidth
+            $bp[$name+'-max'] = ($itm.maxWidth - 1)px if $itm.maxWidth
+        }
+    }
+    return $bp
+}
+
+// @media query based wrappers
+media($query='screen', $allowFlatten=false) {
+    if ($media-queries-support) {
+        @media $query {
+            {block}
+        }
+    }
+    else if ($query in $media-queries-flatten  ||  $allowFlatten) {
+        @media screen {
+            {block}
+        }
+    }
+}
+$media-queries-support ?= true
+$media-queries-flatten ?= ''
+
+// Add retina-only styles
+// Usage:
+// +retina($minRes){
+//   ...styles...
+// }
+retina($res) {
+    $res = $res || 1.5dppx
+    $res = (unit($res) == '') ? (round($res, 3))dppx : $res
+    // NOTE: autoprefixer converts dpi values to webkit scaling factors
+    @media (min-resolution: $res ) {
+        {block}
+    }
+}
