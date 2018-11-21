@@ -12,8 +12,10 @@ The direct way to consume the utils (and one which is possibly not so
 future-proof) is to require them from your local `node_modules` path.
 
 ```styl
-@require '../node_modules/stylutils/normalize'
-@require '../node_modules/stylutils/utils'
+use('../node_modules/stylutils/helpers.js')
+@require '../node_modules/stylutils/mediaqueries'
+@require '../node_modules/stylutils/icons'
+@require '../node_modules/stylutils/quotes'
 // etc...
 ```
 
@@ -23,15 +25,17 @@ The other way is to install a local copy of the stylutils files, and
 the CLI command `stylutils` helps with that. Just run...
 
 ```
-stylutils path/to/src/lib/
+stylutils path/to/src/libs/
 ```
 
 This copies all the utility files into a folder named 
-`path/to/src/lib/stylutils` under your project root, so you can do:
+`path/to/src/libs/stylutils` under your project root, so you can do:
 
 ```styl
-@require 'lib/stylutils/normalize'
-@require 'lib/stylutils/utils'
+use('libs/stylutils/helpers.js')
+@require 'libs/stylutils/mediaqueries'
+@require 'libs/stylutils/icons'
+@require 'libs/stylutils/quotes'
 // etc...
 ```
 
