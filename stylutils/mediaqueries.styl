@@ -1,7 +1,7 @@
-_parseMediaQueries(mediaFormats) {
+_parseMediaQueries($mediaFormats) {
     $mq = {}
     $mq.base = 'screen'
-    for $name, $itm in mediaFormats {
+    for $name, $itm in $mediaFormats {
         // Build $mq.{$name} object of media-query strings
         $mqString = $mq.base
         $mqString += ' and (min-width:'+($itm.minWidth)px+')' if $itm.minWidth
@@ -11,9 +11,9 @@ _parseMediaQueries(mediaFormats) {
     }
     return $mq
 }
-_parseBreakPoints(mediaFormats) {
+_parseBreakPoints($mediaFormats) {
     $bp = {}
-    for $name, $itm in mediaFormats {
+    for $name, $itm in $mediaFormats {
         // The "main"/top-level formats have a group
         // Build $bp.{$name}-(min|max) variables based on them.
         if ($itm.group) {
@@ -23,6 +23,18 @@ _parseBreakPoints(mediaFormats) {
     }
     return $bp
 }
+
+_writeMediaFormatMarkers($mediaFormats, $markerId='mediaformat') {
+    for $name, $itm in $mediaFormats {
+        if ($itm.group) {
+            @media $mq[$name] {
+                #{$markerId} { font-family: $name }
+                #{$markerId}:after { content: $name }
+            }
+        }
+    }
+}
+
 
 // @media query based wrappers
 media($query='screen', $allowFlatten=false) {
