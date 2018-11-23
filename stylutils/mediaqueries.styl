@@ -6,8 +6,7 @@ _parseMediaQueries(mediaFormats) {
         $mqString = $mq.base
         $mqString += ' and (min-width:'+($itm.minWidth)px+')' if $itm.minWidth
         $mqString += ' and (max-width:'+($itm.maxWidth - 1)px+')' if $itm.maxWidth
-        $mqString += ' and (min-height:'+($itm.minHeight)px+')' if $itm.minHeight
-        $mqString += ' and (max-height:'+($itm.maxHeight - 1)px+')' if $itm.maxHeight
+        $mqString += ' and (min-height:'+($itm.minHeight - 1)px+')' if $itm.minHeight
         $mq[$name] = $mqString
     }
     return $mq
@@ -20,8 +19,6 @@ _parseBreakPoints(mediaFormats) {
         if ($itm.group) {
             $bp[$name+'-min'] = ($itm.minWidth)px if $itm.minWidth
             $bp[$name+'-max'] = ($itm.maxWidth - 1)px if $itm.maxWidth
-            $bp[$name+'-minHeight'] = ($itm.minHeight)px if $itm.minHeight
-            $bp[$name+'-maxHeight'] = ($itm.maxHeight - 1)px if $itm.maxHeight
         }
     }
     return $bp
@@ -52,7 +49,7 @@ retina($res) {
     $res = $res || 1.5dppx
     $res = (unit($res) == '') ? (round($res, 3))dppx : $res
     // NOTE: autoprefixer converts dpi values to webkit scaling factors
-    @media (min-resolution: $res ) {
+    @media (min-resolution: $res) {
         {block}
     }
 }
