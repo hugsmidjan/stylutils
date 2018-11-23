@@ -20,12 +20,71 @@ _sr-only--undo($mode=normal) {
     margin: 0  if $mode!=soft
 }
 
-_sr-only-focusable( $mode=normal ) {
-    _sr-only($mode);
+_sr-only-focusable($styles=true, $link=#c00, $border=#029, $bg=#fff) {
+    _sr-only()
 
     &:active,
-    &:focus {
-        z-index: 99999;
-        _sr-only--undo($mode);
+    &:focus,
+    &:focus-within,
+    &.--focus-within {
+        _sr-only--undo()
+        __private__defaultFocusStyling($styles, $link, $border, $bg)
+    }
+}
+
+
+_sr-only-content-focusable($styles=true, $link=#c00, $border=#029, $bg=#fff, $dir=ltr) {
+    _sr-offscreen($dir)
+
+    a:focus,
+    a:active,
+    button:focus,
+    button:active {
+        _sr-offscreen-content--undo($dir)
+        __private__defaultFocusStyling($styles, $link, $border, $bg)
+    }
+}
+
+// Tuck elements off-screen
+_sr-offscreen($dir=ltr) {
+    position: absolute
+    if ($dir == ltr) {
+        right: 9999px
+        left: auto
+    } else {
+        left: 9999px
+        right: auto
+    }
+}
+_sr-offscreen--undo($dir=ltr) {
+    z-index: 99999
+    if ($dir == ltr) {
+        right: auto
+    } else {
+        left: auto
+    }
+}
+_sr-offscreen-content--undo($dir=ltr) {
+    if ($dir == ltr) {
+        right: -9999px
+    } else {
+        left: -9999px
+    }
+}
+
+
+__private__defaultFocusStyling($styles, $link, $border, $bg) {
+    z-index: 99999
+    if ($styles == true) {
+        font-size: 1em;
+        background: $bg;
+        border: 1px solid $border;
+        margin: 0;
+        padding: .2em .33em;
+        color: $link;
+        white-space: nowrap;
+    }
+    else if ($styling) {
+        {$styles}
     }
 }
