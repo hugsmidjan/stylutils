@@ -4,6 +4,7 @@
 
 <!-- Add new lines here. Version number will be decided later -->
 
+-   feat: Add `$visible` boolean flag to `mediaqueries/_writeMediaFormatMarkers()` - to display current mediaFormat name in lower-right corner.
 -   ...
 
 ## 1.2.0

@@ -24,13 +24,37 @@ _parseBreakPoints($mediaFormats) {
     return $bp
 }
 
-_writeMediaFormatMarkers($mediaFormats, $markerId='mediaformat') {
+_writeMediaFormatMarkers($mediaFormats, $markerId='mediaformat', $visible=false) {
     for $name, $itm in $mediaFormats {
         if ($itm.group) {
             @media $mq[$name] {
                 #{$markerId} { font-family: $name }
-                #{$markerId}:after { content: $name }
+                #{$markerId}::after { content: $name }
             }
+        }
+    }
+    if ($visible) {
+        #{$markerId} {
+            // @stylint off (noImportant)
+            position: fixed !important
+            bottom: 0 !important
+            right: 0 !important
+            z-index: 10000 !important
+            background-color: rgba(#000, .5) !important
+            color: #fec !important
+            visibility: visible !important
+            width: auto !important
+            height: auto !important
+            font-size: 14px !important
+            font-family: sans-serif !important
+            font-weight: 700 !important
+            text-decoration: none !important
+            line-height: 1 !important
+            letter-spacing: 1px !important
+            padding: 3px 8px 2px 10px !important
+            margin: auto !important
+            pointer-events: none !important
+            // @stylint on
         }
     }
 }
