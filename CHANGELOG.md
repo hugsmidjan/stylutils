@@ -4,6 +4,7 @@
 
 <!-- Add new lines here. Version number will be decided later -->
 
+-   feat: Update upstream to v8.0.1 - but add back in some opinionated styles
 -   feat: Normalize `input[type="number"]` in Firefox
 -   feat: Add `$visible` boolean flag to `mediaqueries/_writeMediaFormatMarkers()` - to display current mediaFormat name in lower-right corner.
 -   fix: Allow passing  `_icon('')` to create `content: ''`.
