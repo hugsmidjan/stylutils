@@ -8,6 +8,7 @@
 -   feat: Normalize `input[type="number"]` in Firefox
 -   feat: Add `$visible` boolean flag to `mediaqueries/_writeMediaFormatMarkers()` - to display current mediaFormat name in lower-right corner.
 -   fix: Allow passing  `_icon('')` to create `content: ''`.
+-   style: change indentation of upstream code to allow straight copy-paste
 -   ...
 
 ## 1.2.0
