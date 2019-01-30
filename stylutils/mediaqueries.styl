@@ -17,8 +17,8 @@ _parseBreakPoints($mediaFormats) {
         // The "main"/top-level formats have a group
         // Build $bp.{$name}-(min|max) variables based on them.
         if ($itm.group) {
-            $bp[$name+'-min'] = ($itm.minWidth)px if $itm.minWidth
-            $bp[$name+'-max'] = ($itm.maxWidth - 1)px if $itm.maxWidth
+            $bp[$name+'-min'] = $itm.minWidth if $itm.minWidth
+            $bp[$name+'-max'] = ($itm.maxWidth - 1) if $itm.maxWidth
         }
     }
     return $bp

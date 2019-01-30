@@ -7,6 +7,7 @@
 -   feat: Update upstream to v8.0.1 - but add back in some opinionated styles
 -   feat: Normalize `input[type="number"]` in Firefox
 -   feat: Add `$visible` boolean flag to `mediaqueries/_writeMediaFormatMarkers()` - to display current mediaFormat name in lower-right corner.
+-   fix: Remove `px` unit from `_parseBreakPoints()` return values
 -   fix: Allow passing  `_icon('')` to create `content: ''`.
 -   style: change indentation of upstream code to allow straight copy-paste
 -   ...
