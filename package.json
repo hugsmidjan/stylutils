@@ -1,18 +1,18 @@
 {
-    "name": "stylutils",
-    "version": "1.3.0-wip",
-    "description": "Hugsmiðjan's favourite Stylus utils",
-    "author": "Hugsmiðjan ehf. (www.hugsmidjan.is)",
-    "bin": "./_scripts/installer.js",
-    "contributors": [
-        "Már Örlygsson <mar@hugsmidjan.is>"
-    ],
-    "scripts": {
-        "postinstall": "node _scripts/postinstall.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "ssh://git@github.com:hugsmidjan/stylutils.git"
-    },
-    "license": "MIT"
+  "name": "stylutils",
+  "version": "1.3.0-wip",
+  "description": "Hugsmiðjan's favourite Stylus utils",
+  "author": "Hugsmiðjan ehf. (www.hugsmidjan.is)",
+  "bin": "./_scripts/installer.js",
+  "contributors": [
+    "Már Örlygsson <mar@hugsmidjan.is>"
+  ],
+  "scripts": {
+    "postinstall": "node _scripts/postinstall.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:hugsmidjan/stylutils.git"
+  },
+  "license": "MIT"
 }

@@ -366,8 +366,8 @@ template {
     //  * Enforce vertical scrollbar.
     //  */
     html {
-        font-family: sans-serif;
-        overflow-y: scroll;
+        font-family: sans-serif
+        overflow-y: scroll
     }
 
     // /*
@@ -375,7 +375,7 @@ template {
     //  * when they receive focus via JavaScript
     //  */
     [tabindex] {
-        outline: none;
+        outline: none
     }
 
     // /*
@@ -391,40 +391,40 @@ template {
     textarea,
     input[type="password"],
     input[type="text"] {
-        // /* border-radius: 0; // <-- should we enable this? */
-        -webkit-appearance: none;
+        // /* border-radius: 0 // <-- should we enable this? */
+        -webkit-appearance: none
     }
     input[type=number] {
-        -moz-appearance: textfield;
+        -moz-appearance: textfield
     }
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
+      -webkit-appearance: none
+      margin: 0
     }
 
     // Add back placeholder fix removed because of Edge bug
     // (https://github.com/necolas/normalize.css/commit/f081e459e4ea9f9fce9184cc69e4d3b7c1226e92)
     // ...which seems to have been fixed since.
     ::-webkit-input-placeholder {
-        color: inherit;
-        opacity: 0.54;
+        color: inherit
+        opacity: 0.54
     }
 
     fieldset {
-        border: 1px solid #c0c0c0;
-        margin: 0 2px;
-        padding: 0.35em 0.625em 0.75em;
+        border: 1px solid #c0c0c0
+        margin: 0 2px
+        padding: 0.35em 0.625em 0.75em
     }
 
     // /*
     //  * Normalize to old-school border-bottom - rather than the new standard
-    //  * which uses advanced `text-decoration: dotted underline;
+    //  * which uses advanced `text-decoration: dotted underline
     //  * not supported by most browsers as of early 2016
     //  */
     abbr {
-        text-decoration: none;
-        border-bottom: 1px dotted;
+        text-decoration: none
+        border-bottom: 1px dotted
     }
 
     // /*
@@ -434,34 +434,34 @@ template {
     //  */
     sup,
     sub {
-        position: static;
-        line-height: inherit;
-        top: auto;
-        bottom: auto;
+        position: static
+        line-height: inherit
+        top: auto
+        bottom: auto
         // /* this works better */
-        display: inline-block;
-        vertical-align: middle;
+        display: inline-block
+        vertical-align: middle
     }
     sup {
-        margin-top: -1.10em;
+        margin-top: -1.10em
     }
     sub {
-        margin-bottom: -0.85em;
+        margin-bottom: -0.85em
     }
 
     // /*
     //  * Normalize button cursor
     //  */
     button {
-        cursor: pointer;
+        cursor: pointer
     }
 
     // /**
     //  * Remove most spacing between table cells.
     //  */
     table {
-        border-collapse: collapse;
-        border-spacing: 0;
+        border-collapse: collapse
+        border-spacing: 0
     }
 
 }
