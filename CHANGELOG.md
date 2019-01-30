@@ -4,6 +4,10 @@
 
 <!-- Add new lines here. Version number will be decided later -->
 
+## 1.3.0
+
+_2019-01-30_
+
 - feat: Update upstream to v8.0.1 - but add back in some opinionated styles
 - feat: Normalize `input[type="number"]` in Firefox
 - feat: Add `$visible` boolean flag to `mediaqueries/_writeMediaFormatMarkers()`
