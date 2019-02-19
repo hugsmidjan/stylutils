@@ -3,6 +3,11 @@
 ## Upcoming...
 
 <!-- Add new lines here. Version number will be decided later -->
+
+## 1.3.1
+
+_2019-02-19_
+
 - fix: Lint and unbreak single-line blocks inside `eplica-utils.styl`
 
 ## 1.3.0
