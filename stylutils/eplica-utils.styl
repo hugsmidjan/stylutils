@@ -112,7 +112,10 @@ _eplica_byggiraeplica( $img="b33", $padding=20px 0 0 0, $url="https://eplica-cdn
 _eplica_styles_auralMedia() {
     @media aural, braille, embossed, tty {
         .screen-only,
-        .print-only { display: none speak:none }
+        .print-only {
+            display: none
+            speak: none
+        }
     }
 }
 
@@ -178,7 +181,7 @@ _eplica_styles_print() {
 
         p, table, blockquote, ul, ol, dl {
             margin-top: 0
-            margin-bottom: 0.67em
+            margin-bottom: .67em
         }
         ul, ol {
             margin-left: 0
@@ -197,7 +200,7 @@ _eplica_styles_print() {
             page-break-after: avoid
             page-break-inside: avoid
             font-weight: bold
-            margin: 0 0 0.5em
+            margin: 0 0 .5em
         }
         h1 {
             font-size: 1.5em
@@ -211,7 +214,7 @@ _eplica_styles_print() {
             margin-top: 1.1em
         }
         h4, caption {
-            font-size: 0.9em
+            font-size: .9em
             margin-top: 1em
             margin-bottom: 0
         }
@@ -237,8 +240,8 @@ _eplica_styles_print() {
 
         table {
             border-collapse: collapse
-            border-top: 0.67pt solid #ccc
-            border-left: 0.67pt solid #ccc
+            border-top: .67pt solid #ccc
+            border-left: .67pt solid #ccc
         }
         caption { text-align: left }
         thead {
@@ -253,9 +256,9 @@ _eplica_styles_print() {
             page-break-inside: avoid
             vertical-align: top
             text-align: left
-            border-right: 0.67pt solid #ccc
-            border-bottom: 0.67pt solid #ccc
-            padding: 0.2em  0.5em
+            border-right: .67pt solid #ccc
+            border-bottom: .67pt solid #ccc
+            padding: .2em  .5em
 
             &.num {
                 text-align: right
@@ -280,7 +283,7 @@ _eplica_styles_print() {
 
         label {
             clear: both
-            margin-top: 0.2em
+            margin-top: .2em
         }
         .fi_txt label {
             display: block
@@ -302,7 +305,7 @@ _eplica_styles_print() {
 
 
         .pghead {
-            padding-bottom: 0.4em
+            padding-bottom: .4em
             border-bottom: 1pt solid #000
             margin-bottom: 1.2em
 
@@ -325,7 +328,7 @@ _eplica_styles_print() {
             clear: both
             padding-bottom: 1.5em
             border-bottom: 1pt solid #000
-            margin-bottom: 0.8em
+            margin-bottom: .8em
             _afterClear()
         }
         .boxhead {
@@ -346,7 +349,7 @@ _eplica_styles_print() {
             //   font-family: Palatino, "Book Antiqua", Times, "Times New Roman", serif
             //   text-decoration: none
             //   font-weight: normal
-            //   font-size: 0.9em
+            //   font-size: .9em
             // }
             // a[title]:after { content: " (" attr(title) " - " attr(href) ")" }
             // .imgbox a:after,
@@ -359,15 +362,31 @@ _eplica_styles_print() {
 
             .meta {
                 font-style: italic
-                margin-top: 0.67em
+                margin-top: .67em
             }
 
-            img { clear: both  margin: 0.2em  0  0.5em 0  max-width: 100% }
+            img {
+                clear: both
+                margin: .2em 0 .5em 0
+                max-width: 100%
+            }
             .imgright,
-            img.right { float: right  margin: 0.2em 0 0.4em 1em  max-width: 45% }
+            img.right {
+                float: right
+                margin: .2em 0 .4em 1em
+                max-width: 45%
+            }
             .imgleft,
-            img.left { float: left  margin: 0.2em  1em  0.4em  0  max-width: 45% }
-            img.big { display: block  margin: 0  auto  0.7em auto  text-align: center}
+            img.left {
+                float: left
+                margin: .2em 1em .4em 0
+                max-width: 45%
+            }
+            img.big {
+                display: block
+                margin: 0 auto .7em auto
+                text-align: center
+            }
 
 
             .imagebox,
@@ -392,11 +411,11 @@ _eplica_styles_print() {
             .imagebox img,
             .imgbox img { max-width: 100% }
             .imgbox .imgcontent {
-                font-size: 0.8em
+                font-size: .8em
             }
             .imgbox .imgmeta {
-                margin-top: 0.3em
-                font-size: 0.7em
+                margin-top: .3em
+                font-size: .7em
                 color: #666
             }
 
@@ -409,15 +428,15 @@ _eplica_styles_print() {
             .meta {
                 font-family: Palatino, "Book Antiqua", Times, "Times New Roman", serif
                 font-weight: normal
-                font-size: 0.95em
-                margin-right: 0.25em
+                font-size: .95em
+                margin-right: .25em
             }
             ul {
                 padding-left: 0
                 list-style: none
             }
             li {
-                margin-bottom: 0.67em
+                margin-bottom: .67em
 
                 a {
                     font-family: Helvetica, Geneva, Arial, sans-serif
@@ -425,17 +444,17 @@ _eplica_styles_print() {
                 }
             }
             .item {
-                margin-bottom: 0.9em
+                margin-bottom: .9em
                 clear: both
 
                 img {
                     float: right
-                    margin: 0.2em 0 0.5em 1em
+                    margin: .2em 0 .5em 1em
                     max-width: 45%
                 }
                 h3 {
                     font-size: 1em
-                    margin: 0.6em 0 0.2em 0
+                    margin: .6em 0 .2em 0
 
                     a {
                         font-size: 1.05em
@@ -467,8 +486,8 @@ _eplica_styles_print() {
             .bar {
                 page-break-before: avoid
                 display: block
-                border: 0.05em solid #000
-                margin-bottom: 0.5em
+                border: .05em solid #000
+                margin-bottom: .5em
             }
             .results .bar img {
                 height: 1.2em
