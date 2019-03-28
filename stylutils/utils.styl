@@ -154,6 +154,9 @@ $between-maxWidth ?= ($numCols * $column + ($numCols - 1) * $gutter)
 between( $min, $max, $minWidth=$between-minWidth, $maxWidth=$between-maxWidth, pct='%') {
   $slope = ($max - $min) / ($maxWidth - $minWidth)
   $intercept = $max - ($slope * $maxWidth)
+  if ( $slope == 0 ) {
+      return ($intercept)px;
+  }
   if ( $intercept == 0 ) {
       return unit($slope*100, pct)
   }
