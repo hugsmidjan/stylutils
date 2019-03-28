@@ -5,6 +5,11 @@
 <!-- Add new lines here. Version number will be decided later -->
 
 - ...
+
+## 1.3.2
+
+_2019-03-28_
+
 - fix: `between(min, max)` now returns a plain `px` value if `min == max`
 
 ## 1.3.1
