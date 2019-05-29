@@ -1,6 +1,6 @@
 {
   "name": "@hugsmidjan/stylutils",
-  "version": "1.3.2",
+  "version": "2.0.0",
   "description": "Hugsmiðjan's favourite Stylus utils",
   "author": "Hugsmiðjan ehf. (www.hugsmidjan.is)",
   "bin": { "stylutils": "./_scripts/installer.js" },

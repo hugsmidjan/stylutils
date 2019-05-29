@@ -5,6 +5,11 @@
 <!-- Add new lines here. Version number will be decided later -->
 
 - ...
+
+## 2.0.0
+
+_2019-05-29_
+
 - feat: Scope package as `@hugsmidjan/stylutils` for npmjs.com publishing
 
 ## 1.3.2
