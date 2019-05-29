@@ -8,12 +8,12 @@ const outdatedFiles = [
   // add filenames from older-versions here..
 ];
 
-const sanitizePath = destFolder =>
+const sanitizePath = (destFolder) =>
   ((destFolder || '') + '/')
     .replace(/\/\/+$/, '/') // remove double slash off end
     .replace(/^\/+/, ''); // ensure no fs root path
 
-const copyFilesToVendorCssPath = destFolder => {
+const copyFilesToVendorCssPath = (destFolder) => {
   // default to reading "vendorcss" value from project's `package.json`
   destFolder =
     sanitizePath(destFolder) ||
@@ -40,8 +40,7 @@ const copyFilesToVendorCssPath = destFolder => {
       exec('rm ' + [''].concat(outdatedFiles).join(' ' + resolvedDestFolder));
     }
     const path = require('path');
-    const stylutilsPath =
-      path.parse(require.resolve('stylutils/package.json')).dir + '/';
+    const stylutilsPath = path.parse(require.resolve('stylutils/package.json')).dir + '/';
     const srcPath = stylutilsPath + 'stylutils' + (copyFolder ? '' : '/*');
     exec('cp -R ' + srcPath + ' ' + destFolder);
     // And throw in the README for good measure
@@ -63,14 +62,8 @@ if (destFolderArg) {
     projectPath + 'package.json',
     JSON.stringify(projectPkg, null, 4)
   );
-  const updatedKey = projectPkg.stylutils
-    ? 'stylutils.distFolder'
-    : 'vendorcss';
+  const updatedKey = projectPkg.stylutils ? 'stylutils.distFolder' : 'vendorcss';
   console.info(
-    '[stylutils] Set the package.json "' +
-      updatedKey +
-      '" to "' +
-      destFolderArg +
-      '".'
+    '[stylutils] Set the package.json "' + updatedKey + '" to "' + destFolderArg + '".'
   );
 }
