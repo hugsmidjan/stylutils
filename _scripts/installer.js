@@ -40,7 +40,7 @@ const copyFilesToVendorCssPath = (destFolder) => {
       exec('rm ' + [''].concat(outdatedFiles).join(' ' + resolvedDestFolder));
     }
     const path = require('path');
-    const stylutilsPath = path.parse(require.resolve('stylutils/package.json')).dir + '/';
+    const stylutilsPath = path.parse(require.resolve('@hugsmidjan/stylutils/package.json')).dir + '/';
     const srcPath = stylutilsPath + 'stylutils' + (copyFolder ? '' : '/*');
     exec('cp -R ' + srcPath + ' ' + destFolder);
     // And throw in the README for good measure

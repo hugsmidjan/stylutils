@@ -5,6 +5,7 @@
 <!-- Add new lines here. Version number will be decided later -->
 
 - ...
+- fix: Broken require path, don't delete sources folder
 
 ## 2.0.0
 

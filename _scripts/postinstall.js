@@ -7,5 +7,5 @@ if (
   env.INIT_CWD.indexOf(env.PWD) !== 0
 ) {
   const exec = require('child_process').execSync;
-  exec('cp -R stylutils/* . && rm -rf stylutils CHANGELOG.md');
+  exec('cp -R stylutils/* . && rm CHANGELOG.md');
 }
