@@ -22,7 +22,7 @@ const copyFilesToVendorCssPath = (destFolder) => {
 
   if (!destFolder) {
     console.warn(
-      '[stylutils] Your package.json has no "vendorcss" path defined.\n' +
+      '[@hugsmidjan/stylutils] Your package.json has no "vendorcss" path defined.\n' +
         '– Run `yarn run stylutils dest/path/for/stylutils` to install'
     );
   } else {
@@ -36,7 +36,7 @@ const copyFilesToVendorCssPath = (destFolder) => {
 
     const resolvedDestFolder = destFolder + (copyFolder ? 'stylutils/' : '/');
     if (outdatedFiles.length) {
-      console.info('[stylutils] Removing outdated files:\n', outdatedFiles);
+      console.info('[@hugsmidjan/stylutils] Removing outdated files:\n', outdatedFiles);
       exec('rm ' + [''].concat(outdatedFiles).join(' ' + resolvedDestFolder));
     }
     const path = require('path');
@@ -45,7 +45,7 @@ const copyFilesToVendorCssPath = (destFolder) => {
     exec('cp -R ' + srcPath + ' ' + destFolder);
     // And throw in the README for good measure
     exec('cp -R ' + stylutilsPath + 'README.md ' + resolvedDestFolder);
-    console.info('[stylutils] Updated files in "' + resolvedDestFolder + '".');
+    console.info('[@hugsmidjan/stylutils] Updated files in "' + resolvedDestFolder + '".');
   }
 };
 
@@ -64,6 +64,6 @@ if (destFolderArg) {
   );
   const updatedKey = projectPkg.stylutils ? 'stylutils.distFolder' : 'vendorcss';
   console.info(
-    '[stylutils] Set the package.json "' + updatedKey + '" to "' + destFolderArg + '".'
+    '[@hugsmidjan/stylutils] Set the package.json "' + updatedKey + '" to "' + destFolderArg + '".'
   );
 }
