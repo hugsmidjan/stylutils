@@ -3,7 +3,7 @@
 Hugsmiðjan's favourite Stylus utilses.
 
 ```
-yarn add --dev github:hugsmidjan/stylutils#semver:^1.0.0
+yarn add --dev @hugsmidjan/stylutils
 ```
 
 ## Direct usage
@@ -12,10 +12,10 @@ The direct way to consume the utils (and one which is possibly not so
 future-proof) is to require them from your local `node_modules` path.
 
 ```styl
-use('../node_modules/stylutils/helpers.js')
-@require '../node_modules/stylutils/mediaqueries'
-@require '../node_modules/stylutils/icons'
-@require '../node_modules/stylutils/quotes'
+use('../node_modules/@hugsmidjan/stylutils/helpers.js')
+@require '../node_modules/@hugsmidjan/stylutils/mediaqueries'
+@require '../node_modules/@hugsmidjan/stylutils/icons'
+@require '../node_modules/@hugsmidjan/stylutils/quotes'
 // etc...
 ```
 

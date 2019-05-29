@@ -1,9 +1,9 @@
 {
-  "name": "stylutils",
+  "name": "@hugsmidjan/stylutils",
   "version": "1.3.2",
   "description": "Hugsmiðjan's favourite Stylus utils",
   "author": "Hugsmiðjan ehf. (www.hugsmidjan.is)",
-  "bin": "./_scripts/installer.js",
+  "bin": { "stylutils": "./_scripts/installer.js" },
   "contributors": [
     "Már Örlygsson <mar@hugsmidjan.is>"
   ],

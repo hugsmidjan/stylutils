@@ -22,7 +22,7 @@ const copyFilesToVendorCssPath = (destFolder) => {
 
   if (!destFolder) {
     console.warn(
-      '[stylutils] package.json has no "vendorcss" path defined.\n' +
+      '[stylutils] Your package.json has no "vendorcss" path defined.\n' +
         '– Run `yarn run stylutils dest/path/for/stylutils` to install'
     );
   } else {
