@@ -5,6 +5,11 @@
 <!-- Add new lines here. Version number will be decided later -->
 
 - ...
+
+## 2.0.1
+
+_2019-05-29_
+
 - feat: Add @scope-name to console output
 - fix: Broken require path, don't delete sources folder
 
