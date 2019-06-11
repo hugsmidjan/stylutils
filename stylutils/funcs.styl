@@ -1,14 +1,4 @@
-fade($color, $opacity) {
-    return rgba($color, alpha($color)*$opacity)
-}
-percent($value, pct='%') {
-    return unit(100*$value, pct)
-}
-isVertical($dir) {
-    return $dir==top or $dir==bottom
-}
-_one($n) {
-    // Returns -1 for values < 0 and 1 for values > 0.
-    // Useful for multipliers
-    return !$n ? 0 : ($n / abs($n))
-}
+@require 'fade'
+@require 'percent'
+@require 'isvertical'
+@require 'one'

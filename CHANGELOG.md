@@ -5,6 +5,7 @@
 <!-- Add new lines here. Version number will be decided later -->
 
 - ...
+- feat: Break `utlils`, `funcs` into multiple single-**purpose** modules
 
 ## 2.0.1
 

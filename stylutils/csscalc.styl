@@ -1,0 +1,16 @@
+csscalc($first, $rest...) {
+    $first = '' + $first
+    if match('%s', $first) {
+        $first = 'calc(' + $first + ')'
+        return $first % $rest
+    }
+    else {
+        $values = $first
+        for $arg in $rest {
+            if ($arg) {
+                $values = $values + ($arg<0 ? ' - ' : ' + ') + abs($arg)
+            }
+        }
+        return s('calc('+ $values +')')
+    }
+}

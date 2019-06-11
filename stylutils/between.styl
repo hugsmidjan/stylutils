@@ -1,0 +1,18 @@
+// returns margin/padding value calc() function that delivers approximately
+// $min pixel spacing when the element's container is $minWidth pixels wide
+// $max pixel spacing when the element's container is $maxWidth pixels wide.
+$between-minWidth ?= 320
+$between-maxWidth ?= ($numCols * $column + ($numCols - 1) * $gutter)
+between( $min, $max, $minWidth=$between-minWidth, $maxWidth=$between-maxWidth, pct='%') {
+  $slope = ($max - $min) / ($maxWidth - $minWidth)
+  $intercept = $max - ($slope * $maxWidth)
+  if ( $slope == 0 ) {
+      return ($intercept)px;
+  }
+  if ( $intercept == 0 ) {
+      return unit($slope*100, pct)
+  }
+  else {
+      return csscalc( unit($slope*100, pct), ($intercept)px )
+  }
+}

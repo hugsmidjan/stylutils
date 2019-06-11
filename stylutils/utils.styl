@@ -5,42 +5,20 @@
 @require 'propmagic'
 @require 'quotes'
 @require 'triangles'
-@require 'funcs'
 @require 'a11y'
 
+@require 'cols'
+@require 'between'
+@require 'csscalc'
+@require 'buttonreset'
+@require 'hidetext'
+@require 'extendsides'
+@require 'fade'
+@require 'percent'
+@require 'isvertical'
+@require 'one'
 
 
-
-// ===============================================================================
-// Make an element reach beyond the left/right edges of it's container
-// all the way to the viewport edges.
-//
-//     _extendSides()
-//     _extendSides(both)  // same as _extendSides()
-//     _extendSides(left)  // only affect the left-hand side
-//     _extendSides(right)  // ...or the right
-//
-//     _extendSides(both, (25/16)em )  // Set additional padding
-//     _extendSides(both, (-25/16)em )  // ...which can also be a negative value
-//     _extendSides(left, (25/16)em )  // etc.
-//
-_extendSides($side = both, $pad = 0) {
-    $margin = 0
-    if ( $pad < 0 ) {
-        $margin = $pad
-        $pad = 0
-    }
-    $page-expand-padding = csscalc(50vw, -50%, $pad)
-    $page-expand-margin = csscalc(-50vw, 50%, $margin)
-    if ( $side != right ) {
-        margin-left: $page-expand-margin
-        padding-left: $page-expand-padding
-    }
-    if ( $side != left ) {
-        margin-right: $page-expand-margin
-        padding-right: $page-expand-padding
-    }
-}
 
 
 
@@ -60,125 +38,6 @@ _afterClear() {
         clear: both
         display: block
         height: 0
-    }
-}
-
-
-
-// Hide element's text for image or ::before icon replacement
-//
-//   _hideText(soft)
-//      Applies nowrap + hide overflow.
-//      Great for ::before inline-block icons.
-//
-//   _hideText()
-//   _hideText(normal)
-//      `soft` + indents text into the overflow
-//      Great for most background-image applications
-//
-//   _hideText(hard)
-//      `normal` + transparency + collapsed letter-spacing.
-//      Verbose version for weird edge-cases, with
-//      long paragraphs of text and/or cases where
-//      nasty inherited text-styling causes trouble.
-//
-_hideText( $mode=normal ) {
-    overflow: hidden
-    white-space: nowrap
-    if ($mode != soft) {
-        text-indent: 150%
-        text-align: left
-    }
-    if ($mode == hard) {
-        letter-spacing: -0.4em
-        text-shadow: none !important
-        color: transparent !important
-    }
-}
-
-
-
-// reset <button> styles for easier custom styling
-_buttonReset() {
-    border: 0
-    border-radius: 0
-    padding: 0
-    background: transparent
-    font: inherit
-    text-align: inherit
-    color: inherit
-    cursor: pointer
-
-    &:focus {
-        outline: none
-        box-shadow: none
-    }
-}
-
-
-// =======================================================
-// Column-based calc functions
-//
-// These globals are required for them to work:
-$gutter?= 30px
-$column ?= 80px
-$numCols ?= 12
-
-// percentage length - by columns
-//   $w = custom container width in pixels. When specified, this overrides the default column-based container width.
-//   $px = pixel-based modifier for the column-based container width. (Useful for gridded-containers with non-standard padding/margin)
-cols_pct( $nCol, $nGutter=($nCol - _one($nCol)), $nOfCol=$numCols, $nOfGutter=($nOfCol - _one($nOfCol)), $w=null, $px=0 ) {
-    $w = $w  ||  ($nOfCol*$column + $nOfGutter*$gutter + $px)
-    return (100 * ($nCol*$column + $nGutter*$gutter) / $w )%
-}
-// percentage length - pixels to page-width
-//   $px = pixel-based modifier for the column-based container width. (Useful for gridded-containers with non-standard padding/margin)
-px_pct( $nPx, $nOfCol=$numCols, $nOfGutter=($nOfCol - _one($nOfCol)), $px=0 ) {
-    return ( 100 * $nPx / ($nOfCol*$column + $nOfGutter*$gutter + $px) )%
-}
-// pixel length - by columns
-cols_px( $nCol, $nGutter=($nCol - _one($nCol)) ) {
-    return ($nCol*$column + $nGutter*$gutter)px
-}
-
-
-// =======================================================
-
-
-
-// returns margin/padding value calc() function that delivers approximately
-// $min pixel spacing when the element's container is $minWidth pixels wide
-// $max pixel spacing when the element's container is $maxWidth pixels wide.
-$between-minWidth ?= 320
-$between-maxWidth ?= ($numCols * $column + ($numCols - 1) * $gutter)
-between( $min, $max, $minWidth=$between-minWidth, $maxWidth=$between-maxWidth, pct='%') {
-  $slope = ($max - $min) / ($maxWidth - $minWidth)
-  $intercept = $max - ($slope * $maxWidth)
-  if ( $slope == 0 ) {
-      return ($intercept)px;
-  }
-  if ( $intercept == 0 ) {
-      return unit($slope*100, pct)
-  }
-  else {
-      return csscalc( unit($slope*100, pct), ($intercept)px )
-  }
-}
-
-csscalc($first, $rest...) {
-    $first = '' + $first
-    if match('%s', $first) {
-        $first = 'calc(' + $first + ')'
-        return $first % $rest
-    }
-    else {
-        $values = $first
-        for $arg in $rest {
-            if ($arg) {
-                $values = $values + ($arg<0 ? ' - ' : ' + ') + abs($arg)
-            }
-        }
-        return s('calc('+ $values +')')
     }
 }
 
