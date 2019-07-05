@@ -6,6 +6,13 @@
 
 - ...
 
+## 2.2.0
+
+_2019-07-05_
+
+- feat: Add some nice normalize defaults from the sanitize.css project
+
+
 ## 2.1.0
 
 _2019-07-05_
