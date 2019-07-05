@@ -5,6 +5,11 @@
 <!-- Add new lines here. Version number will be decided later -->
 
 - ...
+
+## 2.1.0
+
+_2019-07-05_
+
 - fix: Add workaround for the nested media-query `&` selector bug
 - feat: Break `utlils`, `funcs` into multiple single-**purpose** modules
 
