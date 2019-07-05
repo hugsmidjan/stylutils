@@ -1,0 +1,20 @@
+// @media query based wrappers
+media($query='screen', $allowFlatten=false) {
+    $sel = selector() // workaround for nested media-query `&` bug
+    if ($media-queries-support) {
+        @media $query {
+            {$sel} { // explicitly set & to the current selector
+                {block}
+            }
+        }
+    }
+    else if ($query in $media-queries-flatten  ||  $allowFlatten) {
+        @media screen {
+            {$sel} { // explicitly set & to the current selector
+                {block}
+            }
+        }
+    }
+}
+$media-queries-support ?= true
+$media-queries-flatten ?= ''
