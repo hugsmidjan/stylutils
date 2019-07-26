@@ -38,8 +38,7 @@ _sr-only-content-focusable($styles=true, $link=#c00, $border=#029, $bg=#fff, $di
 
     a:focus,
     a:active,
-    button:focus,
-    button:active {
+    button:focus {
         _sr-offscreen-content--undo($dir)
         __private__defaultFocusStyling($styles, $link, $border, $bg)
     }
@@ -65,6 +64,7 @@ _sr-offscreen--undo($dir=ltr) {
     }
 }
 _sr-offscreen-content--undo($dir=ltr) {
+    position: absolute
     if ($dir == ltr) {
         right: -9999px
     } else {
@@ -82,9 +82,10 @@ __private__defaultFocusStyling($styles, $link, $border, $bg) {
         margin: 0
         padding: .2em .33em
         color: $link
+        text-shadow: none
         white-space: nowrap
     }
-    else if ($styling) {
+    else if ($styles) {
         {$styles}
     }
 }

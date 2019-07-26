@@ -5,6 +5,7 @@
 <!-- Add new lines here. Version number will be decided later -->
 
 - ...
+- fix: Misc errors in `_sr-only-content-focusable()` and friends
 
 ## 2.2.0
 
