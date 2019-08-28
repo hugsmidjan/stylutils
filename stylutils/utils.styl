@@ -7,6 +7,7 @@
 @require 'quotes'
 @require 'triangles'
 @require 'a11y'
+@require 'afterclear'
 
 @require 'cols'
 @require 'between'
@@ -29,19 +30,6 @@
 
 // ===============================================================================
 // Misc
-
-
-
-
-_afterClear() {
-    &::after {
-        content: ' '
-        clear: both
-        display: block
-        height: 0
-    }
-}
-
 
 
 

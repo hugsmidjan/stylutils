@@ -5,6 +5,7 @@
 <!-- Add new lines here. Version number will be decided later -->
 
 - ...
+- fix: Break `_afterClear()` away from `utils`
 
 ## 2.2.1
 
