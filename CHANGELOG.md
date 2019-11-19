@@ -3,6 +3,7 @@
 ## Upcoming...
 
 <!-- Add new lines here. Version number will be decided later -->
+- fix: Add missing `@require 'cols'` in `between()` mixin
 
 - ...
 
