@@ -2,10 +2,8 @@
 
 ## Upcoming...
 
-<!-- Add new lines here. Version number will be decided later -->
+- ... <!-- Add new lines here. Version number will be decided later -->
 - fix: Add missing `@require 'cols'` in `between()` mixin
-
-- ...
 
 ## 2.2.2
 
@@ -24,7 +22,6 @@ _2019-07-26_
 _2019-07-05_
 
 - feat: Add some nice normalize defaults from the sanitize.css project
-
 
 ## 2.1.0
 
@@ -62,13 +59,16 @@ _2019-02-19_
 
 _2019-01-30_
 
-- feat: Update `normalize.css` to v8.0.1 - but reinstate some opinionated styles
+- feat: Update `normalize.css` to v8.0.1 - but reinstate some opinionated
+  styles
 - feat: Normalize `input[type="number"]` in Firefox
-- feat: Add `$visible` boolean flag to `mediaqueries/_writeMediaFormatMarkers()`
-  to display current mediaFormat name in lower-right corner.
+- feat: Add `$visible` boolean flag to
+  `mediaqueries/_writeMediaFormatMarkers()` to display current mediaFormat
+  name in lower-right corner.
 - fix: Remove `px` unit from `_parseBreakPoints()` return values
 - fix: Allow passing `_icon('')` to create `content: ''`.
-- style: change indentation of upstream `normalize.css` to allow straight copy-paste
+- style: change indentation of upstream `normalize.css` to allow straight
+  copy-paste
 - ...
 
 ## 1.2.0
@@ -87,12 +87,12 @@ _2018-11-21_
 - feat: Add \_lowerCase() and \_upperCase() string function helpers.
 - feat: Break `icons`, `mediaqueries` and `quotes` modules away from
   `utils.styl`.
-- feat: Also look for `minHeight` and `maxHeight` when parsing breakpoints
-  and mediaqueries.
+- feat: Also look for `minHeight` and `maxHeight` when parsing breakpoints and
+  mediaqueries.
 
 ## 1.0.0
 
 _2018-11-20_
 
-- Initial release cloned off `hxmgulp/utils/styl`, with an install
-  (make local copy) script.
+- Initial release cloned off `hxmgulp/utils/styl`, with an install (make local
+  copy) script.
