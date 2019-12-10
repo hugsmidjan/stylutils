@@ -3,13 +3,12 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. Version number will be decided later -->
-- feat: Add `_overflowEllipsis()` mixin
 
-
-## 2.3.0
+## 2.3.0 - 2.3.1
 
 _2019-12-10_
 
+- feat: Add `_overflowEllipsis()` mixin
 - feat: Add `_isDevMode()` and `_getEnv(key)` helpers to `helpers.js`
 - fix: Add missing `@require 'cols'` in `between()` mixin
 
