@@ -3,6 +3,7 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. Version number will be decided later -->
+- feat: Add `_isDevMode()` and `_getEnv(key)` helpers to `helpers.js`
 - fix: Add missing `@require 'cols'` in `between()` mixin
 
 ## 2.2.2
