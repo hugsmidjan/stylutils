@@ -3,6 +3,8 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. Version number will be decided later -->
+- feat: Add `_overflowEllipsis()` mixin
+
 
 ## 2.3.0
 
