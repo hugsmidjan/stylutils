@@ -1,23 +1,35 @@
 /* globals process */
 module.exports = function () {
-  return function (style) {
-    style.define('_encodeURIComponent', function (val) {
+  return function (stylus) {
+    stylus.define('_encodeURIComponent', function (val) {
       return encodeURIComponent(val.string);
     });
-    style.define('_decodeURIComponent', function (val) {
+    stylus.define('_decodeURIComponent', function (val) {
       return decodeURIComponent(val.string);
     });
-    style.define('_upperCase', function (val) {
+    stylus.define('_upperCase', function (val) {
       return val.string.toUpperCase();
     });
-    style.define('_lowerCase', function (val) {
+    stylus.define('_lowerCase', function (val) {
       return val.string.toLowerCase();
     });
-    style.define('_getEnv', function (key) {
+    stylus.define('_getEnv', function (key) {
       return process.env[key.string];
     });
-    style.define('_isDevMode', function () {
+    stylus.define('_isDevMode', function () {
       return process.env.NODE_ENV !== 'production';
+    });
+    stylus.define('_fileChecksum', function (filePath) {
+      try {
+				const path = stylus.evaluator.paths.slice(-1)[0];
+        const meta = require('fs').statSync(path +'/'+ filePath.string);
+        // Currently assumes that filesize is sufficient as a checksum
+        // This is quick, but may be changed later
+        return meta.size;
+      } catch (error) {
+        console.error('Can\'t do `_fileChecksum` for "' + filePath.string + '"\n - - - -');
+        return '';
+      }
     });
   };
 };
