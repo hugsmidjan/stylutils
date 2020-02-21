@@ -21,11 +21,9 @@ module.exports = function () {
     });
     stylus.define('_fileChecksum', function (filePath) {
       try {
-				const path = stylus.evaluator.paths.slice(-1)[0];
-        const meta = require('fs').statSync(path +'/'+ filePath.string);
-        // Currently assumes that filesize is sufficient as a checksum
-        // This is quick, but may be changed later
-        return meta.size;
+				const callerPath = stylus.evaluator.paths.slice(-1)[0];
+				const filePathFull = callerPath + '/' + filePath.string;
+        return require('md5-file').sync(filePathFull);
       } catch (error) {
         console.error('Can\'t do `_fileChecksum` for "' + filePath.string + '"\n - - - -');
         return '';

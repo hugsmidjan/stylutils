@@ -14,5 +14,8 @@
     "type": "git",
     "url": "ssh://git@github.com:hugsmidjan/stylutils.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "md5-file": "^4.0.0"
+  }
 }
