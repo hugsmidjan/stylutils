@@ -3,6 +3,11 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. Version number will be decided later -->
+
+## 2.4.0
+
+_2020-02-21_
+
 - feat: Add `__fileChecksum()` function to `helpers.js`
 
 ## 2.3.0 - 2.3.1
