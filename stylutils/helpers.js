@@ -21,8 +21,8 @@ module.exports = function () {
     });
     stylus.define('_fileChecksum', function (filePath) {
       try {
-				const callerPath = stylus.evaluator.paths.slice(-1)[0];
-				const filePathFull = callerPath + '/' + filePath.string;
+        const callerPath = stylus.evaluator.paths.slice(-1)[0];
+        const filePathFull = callerPath + '/' + filePath.string;
         return require('md5-file').sync(filePathFull);
       } catch (error) {
         console.error('Can\'t do `_fileChecksum` for "' + filePath.string + '"\n - - - -');
